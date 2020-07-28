@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+   <div class="container">
+    <br>
+       <h3>Image Gallary</h3>
+       <br>
+<img class='img' src="img/1sh.jpg" alt='1'>
+<img class='img' src="img/3sh.jpg" alt='2'>
+<img class='img' src="img/4s.jpg" alt='3'>
+<img class='img' src="img/4sh.jpg" alt='4'>
+<img class='img' src="img/5s.jpg" alt='5'>
+<img class='img' src="img/2sh.jpg" alt='6'>
+</div>
+
+<script>
+    $(document).ready(function() {
+  $("img").click(function() {
+    $src = $(this).attr("src");
+    if (!$("#light-box").length > 0) {
+      $("body").append("<div id='light-box'><span class='material-icons'>close</span><img src=''></div>");
+      $("#light-box").show();
+      $("#light-box img").attr("src", $src);
+    } else {
+      $("#light-box").show();
+      $("#light-box img").attr("src", $src);
+    }
+  });
+  $("body").on("click", "#light-box span", function() {
+    $("#light-box").hide();
+  });
+});
+</script>
+
+</body>
+</html>
